@@ -1,7 +1,5 @@
 import Head from "next/head";
 import Boxes from "./Boxes"
-import Link from 'next/link'
-import Image from "next/image";
 import React, { useRef, useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 
