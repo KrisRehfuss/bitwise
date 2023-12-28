@@ -23,7 +23,7 @@ const Boxes = () => {
    // Render the component
    return (
       <div className="flex flex-col items-center p-5">
-         <div className="flex justify-center w-screen gap-3 lg:mr-1 ml-1 lg:gap-3 mb-3">
+         <div className="flex justify-center w-screen gap-3  lg:gap-3 mb-3">
             {/* Labels above the text fields */}
             {numbers.map((number, index) => (
                <div key={`label-${index}`} className="lg:w-14 w-10 text-center lg:text-lg">
