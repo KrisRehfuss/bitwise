@@ -4,17 +4,15 @@ const Boxes = () => {
    // The corresponding numbers for each text box
    const numbers = [128, 64, 32, 16, 8, 4, 2, 1];
 
-   // State to keep track of the values entered
-   const [values, setValues] = useState(Array(numbers.length).fill(''));
+   // State to keep track of the values entered, initialized to '0'
+   const [values, setValues] = useState(Array(numbers.length).fill('0'));
 
-   // Function to handle input change
-   const handleChange = (index) => (e) => {
-      const newVal = e.target.value.slice(-1); // Get the last character
-      const onlyNums = newVal === '1' || newVal === '0' ? newVal : ''; // Only allow '1' or '0'
-
-      // Update the values array
-      const newValues = [...values];
-      newValues[index] = onlyNums;
+   // Function to handle box click
+   const handleBoxClick = (index) => {
+      // Update the values array by toggling between '0' and '1'
+      const newValues = values.map((value, idx) =>
+         idx === index ? (value === '1' ? '0' : '1') : value
+      );
       setValues(newValues);
    };
 
@@ -25,7 +23,7 @@ const Boxes = () => {
    // Render the component
    return (
       <div className="flex flex-col items-center p-5">
-         <div className="flex justify-center ml-1 gap-3 mb-3">
+         <div className="flex justify-center mr-36 ml-1 gap-3 mb-3">
             {/* Labels above the text fields */}
             {numbers.map((number, index) => (
                <div key={`label-${index}`} className="w-14 text-center text-lg">
@@ -34,19 +32,18 @@ const Boxes = () => {
             ))}
          </div>
          <div className="flex justify-center gap-3">
-            {/* Text fields for binary input */}
+            {/* Boxes for binary input */}
             {values.map((value, index) => (
-               <input
-                  key={`input-${index}`}
-                  type="text"
-                  maxLength="1"
-                  className={`w-14  h-14 text-center text-xl ${value === '1' ? 'bg-green-500' : 'bg-gray-400'}`}
-                  value={value}
-                  onChange={handleChange(index)}
-               />
+               <div
+                  key={`box-${index}`}
+                  className={`w-14 h-14 flex justify-center items-center text-xl cursor-pointer ${value === '1' ? 'bg-green-500' : 'bg-gray-400'}`}
+                  onClick={() => handleBoxClick(index)}
+               >
+                  {value}
+               </div>
             ))}
             {/* Display the sum */}
-            <div className="w-32 h-14 -mr-36 flex justify-center items-center text-xl">
+            <div className="w-32 h-14 flex justify-center items-center text-xl">
                {calculateSum()}
             </div>
          </div>
