@@ -74,7 +74,7 @@ export default function Home() {
   return (
     <div className="MAIN Smoother">
       <Head>
-        <title>Hyper.ai </title>
+        <title>Bitwise Practice</title>
         <meta name="description" content="Home" />
         <meta
           name="viewport"
