@@ -18,7 +18,7 @@ export default function Home() {
       router.push('/Reflect');
     }
     else if (event.key === 'h') {
-      router.push('/');
+      router.push('/')
     }
   };
   useEffect(() => {
