@@ -1,11 +1,8 @@
 import Head from "next/head";
 import Boxes from "./Boxes"
 import Link from 'next/link'
-import { AiOutlineStar } from "react-icons/ai";
-import { BiSearch } from "react-icons/bi";
 import Image from "next/image";
 import React, { useRef, useState, useEffect } from "react";
-import BannerImage from "../../public/Abstract2.jpg";
 import { useRouter } from 'next/router';
 
 
