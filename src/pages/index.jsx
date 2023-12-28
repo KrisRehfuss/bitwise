@@ -24,7 +24,7 @@ export default function Home() {
 
 
         {/* Container */}
-      <div className="border-2 flex flex-col font-pop BoxScreen">
+      <div className="flex flex-col font-pop BoxScreen">
         {/* Name */}
           <div className="BoxFit border-b pb-8 m-4 p-4 lg:m-8 lg:p-8 ">
             <p className="lg:p-4 pb-4 lg:text-4xl text-3xl">Bitwise AND Operation</p>

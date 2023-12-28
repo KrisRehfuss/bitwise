@@ -23,10 +23,10 @@ const Boxes = () => {
    // Render the component
    return (
       <div className="flex flex-col items-center p-5">
-         <div className="flex justify-center mr-36 ml-1 gap-3 mb-3">
+         <div className="flex justify-center w-screen gap-3 lg:mr-1 ml-1 lg:gap-3 mb-3">
             {/* Labels above the text fields */}
             {numbers.map((number, index) => (
-               <div key={`label-${index}`} className="w-14 text-center text-lg">
+               <div key={`label-${index}`} className="lg:w-14 w-10 text-center lg:text-lg">
                   {number}
                </div>
             ))}
@@ -36,16 +36,17 @@ const Boxes = () => {
             {values.map((value, index) => (
                <div
                   key={`box-${index}`}
-                  className={`w-14 h-14 flex justify-center items-center text-xl cursor-pointer ${value === '1' ? 'bg-green-500' : 'bg-gray-400'}`}
+                  className={`lg:w-14 lg:h-14 w-10 h-10 flex justify-center items-center text-xl cursor-pointer ${value === '1' ? 'bg-green-500' : 'bg-gray-400'}`}
                   onClick={() => handleBoxClick(index)}
                >
                   {value}
                </div>
             ))}
             {/* Display the sum */}
-            <div className="w-32 h-14 flex justify-center items-center text-xl">
-               {calculateSum()}
-            </div>
+
+         </div>
+         <div className="mt-4 w-32 h-14 FlexCenter text-xl">
+            {calculateSum()}
          </div>
       </div>
    );
