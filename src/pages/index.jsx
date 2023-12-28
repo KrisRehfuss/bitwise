@@ -6,69 +6,7 @@ import { useRouter } from 'next/router';
 
 export default function Home() {
 
-  // Pager
-  const router = useRouter();
-
-  const Pager = (event) => {
-    if (event.key === 'p' || event.key === 'P') {
-      router.push('/ModernSynth');
-    } else if (event.key === 'c' || event.key === 'C') {
-      router.push('/Splash');
-    } else if (event.key === '[') {
-      router.push('/Reflect');
-    }
-    else if (event.key === 'h') {
-      router.push('/')
-    }
-  };
-  useEffect(() => {
-    window.addEventListener('keydown', Pager);
-    return () => {
-      window.removeEventListener('keydown', Pager);
-    };
-  }, []);
-
-  // Themer
-  const [theme, setTheme] = useState(null)
-
-  useEffect(() => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').
-      matches) {
-      setTheme('dark')
-    } else {
-      setTheme('light')
-    }
-  }, [])
-
-  const Themer = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
-  }
-
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [theme])
-
-  // Theme Change on Space
-  useEffect(() => {
-    function handleKeyDown(event) {
-      if (event.code === 'Space') {
-        event.preventDefault();
-        Themer();
-      }
-    }
-
-    window.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  });
-
-
+ 
 
 
   return (
@@ -88,9 +26,9 @@ export default function Home() {
         {/* Container */}
       <div className="border-2 flex flex-col font-pop BoxScreen">
         {/* Name */}
-          <div className="BoxFit border-b m-8 p-8 ">
-            <p className="p-4 text-4xl">Bitwise AND Operation</p>
-            <p className="px-4 text-lg">Networking Practice</p>
+          <div className="BoxFit border-b pb-8 m-4 p-4 lg:m-8 lg:p-8 ">
+            <p className="lg:p-4 pb-4 lg:text-4xl text-3xl">Bitwise AND Operation</p>
+            <p className="lg:px-4 text-lg">Networking Practice</p>
           </div>
 
           <Boxes />

@@ -12,7 +12,7 @@ body {
 }
 
 .MAIN {
-  @apply scroll-smooth bg-whiteish dark:bg-coal
+  @apply scroll-smooth bg-coal
 }
 
 
