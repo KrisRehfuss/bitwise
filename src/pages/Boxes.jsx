@@ -25,34 +25,31 @@ const Boxes = () => {
    // Render the component
    return (
       <div className="flex flex-col items-center p-5">
-         <div className="flex justify-center gap-2 mr-12 mb-2">
+         <div className="flex justify-center ml-1 gap-3 mb-3">
             {/* Labels above the text fields */}
             {numbers.map((number, index) => (
-               <div key={`label-${index}`} className="w-10 text-center">
+               <div key={`label-${index}`} className="w-14 text-center text-lg">
                   {number}
                </div>
             ))}
          </div>
-         <div className="flex justify-center gap-2">
+         <div className="flex justify-center gap-3">
             {/* Text fields for binary input */}
-            {numbers.map((_, index) => (
+            {values.map((value, index) => (
                <input
                   key={`input-${index}`}
                   type="text"
                   maxLength="1"
-                  className="w-10 h-10 bg-gray-400 text-center"
-                  value={values[index]}
+                  className={`w-14  h-14 text-center text-xl ${value === '1' ? 'bg-green-500' : 'bg-gray-400'}`}
+                  value={value}
                   onChange={handleChange(index)}
                />
             ))}
-            <div className="flex justify-end w-1/3 mt-2">
-               <div className="w-10 text-center">
+            {/* Display the sum */}
+            <div className="w-32 h-14 -mr-36 flex justify-center items-center text-xl">
                {calculateSum()}
-               </div>
             </div>
          </div>
-         {/* Display the sum */}
-
       </div>
    );
 };

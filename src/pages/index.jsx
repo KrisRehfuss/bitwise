@@ -7,19 +7,7 @@ import Image from "next/image";
 import React, { useRef, useState, useEffect } from "react";
 import BannerImage from "../../public/Abstract2.jpg";
 import { useRouter } from 'next/router';
-// import Axis from "./Axis";
-import Banner from "./Banner";
-import Header from "./Header";
-import SkillTree from "./SkillTree";
-import { BsSun } from "react-icons/bs";
 
-import Footer from "./Footer";
-import LiveSites from './LiveSites.jsx'
-import Prismatic from "./Prismatic";
-import Chord from "../../public/Piano/Chord.mp3";
-import Chord2 from "../../public/Piano/Chord-02.mp3";
-import Chord3 from "../../public/Piano/Chord-03.mp3";
-import M from "../../public/Engine.png";
 
 export default function Home() {
 
