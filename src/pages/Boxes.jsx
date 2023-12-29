@@ -36,7 +36,7 @@ const Boxes = () => {
             {values.map((value, index) => (
                <div
                   key={`box-${index}`}
-                  className={`lg:w-14 lg:h-14 w-10 h-10 flex justify-center items-center text-xl cursor-pointer ${value === '1' ? 'bg-green-500' : 'bg-gray-400'}`}
+                  className={`select-none lg:w-14 lg:h-14 w-10 h-10 flex justify-center items-center text-xl cursor-pointer ${value === '1' ? 'bg-green-500' : 'bg-gray-400'}`}
                   onClick={() => handleBoxClick(index)}
                >
                   {value}
