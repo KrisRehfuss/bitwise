@@ -66,13 +66,13 @@ export default function Reflect() {
       setTheme(theme === 'dark' ? 'light' : 'dark')
    }
 
-   useEffect(() => {
-      if (theme === 'dark') {
-         document.documentElement.classList.add('dark')
-      } else {
-         document.documentElement.classList.remove('dark')
-      }
-   }, [theme])
+   // useEffect(() => {
+   //    if (theme === 'dark') {
+   //       document.documentElement.classList.add('dark')
+   //    } else {
+   //       document.documentElement.classList.remove('dark')
+   //    }
+   // }, [theme])
 
    // Note/Theme Changer
    function Darken() {
