@@ -69,13 +69,13 @@ export default function Home() {
   }, [theme])
 
   // Theme Change on Space
-  useEffect(() => {
-    function handleKeyDown(event) {
-      if (event.code === 'Space') {
-        event.preventDefault();
-        Themer();
-      }
-    }
+  // useEffect(() => {
+  //   function handleKeyDown(event) {
+  //     if (event.code === 'Space') {
+  //       event.preventDefault();
+  //       Themer();
+  //     }
+  //   }
 
     window.addEventListener('keydown', handleKeyDown);
 
